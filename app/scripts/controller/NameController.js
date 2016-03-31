@@ -1,5 +1,5 @@
-angular.module("Primary",[])
-.controller("PrimaryController",function($scope){
+angular.module("name",[])
+.controller("nameController",function($scope){
 	$scope.student = {
 		firstname:"Vector",
 		lastname: "Wang",
