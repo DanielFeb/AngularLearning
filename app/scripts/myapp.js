@@ -1,4 +1,10 @@
-var app = angular.module("myapp",["ngRoute","name"])
+var app = angular.module("myapp",[
+    "ngRoute",
+    "myapp.requestController",
+    "myapp.nameController",
+    "myapp.constService",
+    "myapp.helloService"
+    ])
 
 function routeConfig($routeProvider){
     $routeProvider.
@@ -18,24 +24,16 @@ function routeConfig($routeProvider){
         controller: 'mainController',
         templateUrl: './views/main.html'
     }).
+    when('/request', {
+        controller: 'requestController',
+        templateUrl: './views/request.html'
+    }).
     otherwise({
         redirectTo: '/'
     });
 };
 
 app.config(routeConfig);
-
-app.controller("appNameController",function($scope){
-	$scope.student = {
-		firstname:"Daniel",
-		lastname: "Xu",
-		fullname: function(){
-			var studentObject;
-			studentObject = $scope.student;
-			return studentObject.firstname + " " + studentObject.lastname;
-  		}
-	};
-})
 
 app.controller("signinController",function($scope){
 	$scope.pageTitle = "Signin";
