@@ -1,4 +1,4 @@
-angular.module("name",[])
+angular.module("myapp.nameController",[])
 .controller("nameController",function($scope){
 	$scope.student = {
 		firstname:"Vector",
